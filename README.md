@@ -2,7 +2,9 @@
 #### Video Demo: https://youtu.be/G62BgIlKQ9E
 #### Description:
 My final project for CS50x is a tiny game called FishyFishing which, you guessed it, is about fishing.
-You are at a cute lake with two fishing spots and control a player which can go to those fishing spots. 
+You are at a lake with two fishing spots and control a player which can go to those fishing spots. 
+
+Don't look at the visual aspect too much. Didn't spend a lot of time on it :D
 
 The game has three "phases". The first one is when you're not fishing and walking around the lake.
 
