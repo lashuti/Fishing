@@ -20,6 +20,27 @@ But when it reaches the top, it means you've caught the fish and the Caught Fish
 
 Either way, after the catching phase, whether the fish escaped or you caught it, you return to the lake as a player and have the freedom to either fish at the same spot, or go to the other one.
 
+Now lets talk a bit about code. I tried to make the code loosely-coupled, without many magic numbers or undescriptive variables.
+Tried not to change global variables in some random files which would make it harder to debug or understand code in the future, instead
+thats why I introduced states, which, when changed, whatever needs to happen is written inside main.
+
+In the main file, we load all the other scripts, images, initialize game objects, draw backgrounds etc..
+
+Player class is responsible for moving and starting the catching phase when near fishing spot.
+
+The Fish class is relatively simple as well, only responsible for swimming around and rending on the screen.
+
+Hook class however, is responsible for it's own movement, as well as detecting collision with the target fish.
+
+Catching and filling (progress) bars are connected to each other, catching bar is responsible for rectangle which we control,
+the round fishy's random movement and detecting whether or not we are touching the round fishy with out rectangle.
+
+The filling/progress bar checks if it's catching phase and catching bar's rectangle is touching the fish, depending on that it updates
+the progress bar every frame, either growing or shrinking it.
+
+Progress bar is also responsible for checking whether we caught the fish or not. When the bar reaches either the top or bottom, catching phase ends
+and we are back on the main screen. Only difference is, if the bar reaches the top, we get a point too.
+
 Thanks for reading.
 This was CS50x wooooooooooooooooooooo!
 David Malan you're the best 😘
